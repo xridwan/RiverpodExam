@@ -13,7 +13,7 @@ class CharacterRepositoryImpl implements CharacterRepository {
   @override
   Future<Either<Failure, List<Character>>> getCharacters() async {
     try {
-      final response = await dioClient.get('characterrrr');
+      final response = await dioClient.get('character');
       final List<Character> characters = (response.data['results'] as List)
           .map((character) => Character.fromJson(character))
           .toList();
