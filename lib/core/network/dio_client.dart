@@ -1,5 +1,7 @@
 import 'package:dio/dio.dart';
 
+import '../error/handle_dio_error.dart';
+
 class DioClient {
   final Dio _dio;
   final String _baseUrl = 'https://rickandmortyapi.com/api';
@@ -17,7 +19,7 @@ class DioClient {
       );
       return response;
     } on DioException catch (e) {
-      throw Exception('Failed to load data: ${e.message}');
+      throw handleDioError(e);
     }
   }
 }

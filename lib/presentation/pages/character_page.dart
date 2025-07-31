@@ -3,7 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:riverpod_exam/presentation/widgets/character_item_widget.dart';
 
-import '../../core/error/failures.dart';
+import '../../core/error/failure.dart';
 import '../../core/router/navigation_route.dart';
 import '../provider/app_provider.dart';
 
@@ -37,7 +37,7 @@ class CharacterPage extends ConsumerWidget {
         },
         loading: () => const Center(child: CircularProgressIndicator()),
         error: (err, _) => Center(
-          child: Text(err is Failures ? err.message : "Unknown error"),
+          child: Text(err is Failure ? err.errorMessage : "Unknown error"),
         ),
       ),
     );

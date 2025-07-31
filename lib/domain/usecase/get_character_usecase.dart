@@ -1,5 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'package:riverpod_exam/core/error/failures.dart';
+import 'package:riverpod_exam/core/error/failure.dart';
 import 'package:riverpod_exam/domain/entity/character.dart';
 import 'package:riverpod_exam/domain/repository/character_repository.dart';
 
@@ -8,7 +8,7 @@ class GetCharacterUsecase {
 
   GetCharacterUsecase(this.characterRepository);
 
-  Future<Either<Failures, List<Character>>> call() async {
+  Future<Either<Failure, List<Character>>> call() async {
     return await characterRepository.getCharacters();
   }
 }
@@ -18,7 +18,7 @@ class GetCharacterDetailUsecase {
 
   GetCharacterDetailUsecase(this.characterRepository);
 
-  Future<Either<Failures, Character>> call(int id) async {
+  Future<Either<Failure, Character>> call(int id) async {
     return await characterRepository.getCharacter(id);
   }
 }
