@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 import 'package:riverpod_exam/core/network/dio_client.dart';
-import 'package:riverpod_exam/data/character_repository_impl.dart';
+import 'package:riverpod_exam/data/repository/character_repository_impl.dart';
 import 'package:riverpod_exam/domain/repository/character_repository.dart';
 import 'package:riverpod_exam/domain/usecase/get_character_usecase.dart';
 

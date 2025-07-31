@@ -25,6 +25,7 @@ class CharacterPage extends ConsumerWidget {
               return CharacterItemWidget(
                 name: character.name,
                 status: character.status,
+                image: character.image,
                 onTap: () {
                   context.push(
                     NavigationRoute.characterDetailPage,
